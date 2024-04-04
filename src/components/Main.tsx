@@ -1,10 +1,14 @@
 import React from 'react';
+import useScrollAnimation from '../hooks/useScrollAnimation';
 
 const Main = () => {
+  const { ref, inView } = useScrollAnimation();
   return (
+    <div ref={ref} className={`main ${inView ? 'animate' : ''}`}>
     <div className="main">
-      <h2>Main</h2>
-      <div style={{height:'100%'}}>Main content here</div>
+      <p>프론트엔드 개발자 홍륜건</p>
+      <p>PORTFOLIO</p>
+    </div>
     </div>
   );
 };

@@ -1,0 +1,17 @@
+/* .main {
+    text-align: center;
+  } */
+  
+  .fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 1s ease-in forwards; /* 애니메이션 적용 */
+  }
+  
+  @keyframes fadeInAnimation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

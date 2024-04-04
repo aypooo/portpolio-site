@@ -4,22 +4,24 @@ import Profile from './components/Profile';
 import Works from './components/Works';
 import Main from './components/Main';
 import Skill from './components/Skill';
+import useScrollAnimation from './hooks/useScrollAnimation';
 
 function App() {
+  const { ref, inView } = useScrollAnimation();
   return (
     <div className="App">
-      <div className="section">
+      <section className="section">
         <Main/>
-      </div>
-      <div className="section">
+      </section>
+      <section className="section">
         <Profile />
-      </div>
-      <div className="section">
+      </section>
+      <section className="section">
         <Skill />
-      </div>
-      <div className="section">
+      </section>
+      <section className="section">
         <Works />
-      </div>
+      </section>
 
     </div>
   );
