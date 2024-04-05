@@ -4,7 +4,7 @@ import useScrollAnimation from '../hooks/useScrollAnimation';
 const Skill = () => {
   const { ref, inView } = useScrollAnimation();
   return (
-    <div ref={ref} className={`main ${inView ? 'animate' : ''}`}>
+    <div ref={ref} className={`section-content main ${inView ? 'animate' : ''}`}>
     <div className="skill">
       <h2>Skill</h2>
       <p>react</p>

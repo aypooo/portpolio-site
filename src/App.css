@@ -3,23 +3,21 @@
   text-align: center;
 
 }
+
+/* 섹션*/
 .section {
-  height: 200vh; /* 뷰포트의 높이만큼 설정 */
+  height: 150vh;
   align-items: center;
 }
-
-/* 각 섹션 스타일 */
-.main,
-.profile,
-.works,
-.skill {
+.section-content {
   position: -webkit-sticky; 
   position: sticky;
-  top: 30%; /* 화면 상단에 고정됨 */
-  background-color: #ffffff; /* 각 섹션의 배경색 */
-  z-index: 1000; /* 다른 요소 위에 표시되도록 설정 */
-  padding: 20px; /* 내용과의 간격 조정 */
+  top: 30%;
+  background-color: #ffffff;
+  z-index: 1000;
+  padding: 20px;
 }
+
 .main{
   font-size: large;
 }
@@ -32,8 +30,6 @@
 .skill{
 
 }
-
-
 
 .main.animate {
   animation: fadeInUp 3s forwards; /* 애니메이션 이름, 지속 시간, 채우기 모드 */
@@ -49,3 +45,50 @@
     transform: translateY(0); /* 최종 위치 */
   }
 }
+
+
+/* 네비게이션 */
+.navigation {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999; 
+}
+.navigation ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dot {
+  background-color: #ccc;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  margin: 30px 0;
+  transition: background-color 0.3s;
+  position: relative; /* 툴팁 위치 조정을 위해 추가 */
+}
+
+.active {
+  background-color: #333; /* 활성화된 점의 색상 변경 */
+}
+.dot:hover::after {
+  content: attr(data-title);
+  position: absolute;
+  left: -100px;
+  width: 40px;
+  height: 20px;
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-size: 14px;
+  z-index: 1;
+}
+
+.dot:hover {
+  background-color: #555; /* 마우스를 올렸을 때 점의 색상 변경 */
+}
+
