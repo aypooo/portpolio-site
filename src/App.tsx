@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import Profile from './components/Profile';
 import Works from './components/Works';
@@ -18,20 +18,28 @@ function App() {
 
   // 현재 활성화된 섹션을 감지하여 상태 업데이트
   useEffect(() => {
-    if (mainAnimation.inView) setCurrentSection('main') ;
+    if (mainAnimation.inView) setCurrentSection('main');
     else if (profileAnimation.inView) setCurrentSection('profile');
     else if (skillAnimation.inView) setCurrentSection('skill');
     else if (worksAnimation.inView) setCurrentSection('works');
   }, [mainAnimation.inView, profileAnimation.inView, skillAnimation.inView, worksAnimation.inView]);
 
+  // 각 섹션으로 스크롤하는 함수
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="App">
       <nav className="navigation">
         <ul>
-          <li className={currentSection === 'main' ? 'dot active' : 'dot'} data-title="Main"></li>
-          <li className={currentSection === 'profile' ? 'dot active' : 'dot'} data-title="Profile"></li>
-          <li className={currentSection === 'skill' ? 'dot active' : 'dot'} data-title="Skill"></li>
-          <li className={currentSection === 'works' ? 'dot active' : 'dot'} data-title="Works"></li>
+          <li className={currentSection === 'main' ? 'dot active' : 'dot'} data-title="Main" onClick={() => scrollToSection('main')}></li>
+          <li className={currentSection === 'profile' ? 'dot active' : 'dot'} data-title="Profile" onClick={() => scrollToSection('profile')}></li>
+          <li className={currentSection === 'skill' ? 'dot active' : 'dot'} data-title="Skill" onClick={() => scrollToSection('skill')}></li>
+          <li className={currentSection === 'works' ? 'dot active' : 'dot'} data-title="Works" onClick={() => scrollToSection('works')}></li>
         </ul>
       </nav>
       
