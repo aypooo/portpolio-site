@@ -15,7 +15,7 @@
   top: 30%;
   background-color: #ffffff;
   z-index: 1000;
-  padding: 20px;
+  padding: 0 50px;
 }
 
 .main{
@@ -92,3 +92,6 @@
   background-color: #555; /* 마우스를 올렸을 때 점의 색상 변경 */
 }
 
+.swiper-wrapper{
+  padding-bottom: 50px;
+}
