@@ -1,15 +1,19 @@
 import React from 'react';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import VideoBackground from './VideoBackgroud';
 
 const Main = () => {
   const { ref, inView } = useScrollAnimation();
   return (
- <div ref={ref} className={`section-content main ${inView ? 'animate' : ''}`}>
+ <div ref={ref} >
     <div className="main">
-      <p>프론트엔드 개발자 홍륜건</p>
-      <p>PORTFOLIO</p>
+      <div className='main__content'>
+        <p>FRONTEND</p>
+        <p>PORTFOLIO</p>
+        <VideoBackground/>
+      </div>
     </div>
-    </div>
+  </div>
   );
 };
 

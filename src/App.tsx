@@ -46,6 +46,7 @@ function App() {
       <section id="main" className="section" ref={mainAnimation.ref}>
         <Main/>
       </section>
+      <div className='bg'>
       <section id="profile" className="section" ref={profileAnimation.ref}>
         <Profile />
       </section>
@@ -55,6 +56,7 @@ function App() {
       <section id="works" className="section" ref={worksAnimation.ref}>
         <Works />
       </section>
+      </div>
     </div>
   );
 }
