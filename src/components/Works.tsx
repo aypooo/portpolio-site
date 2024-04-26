@@ -8,8 +8,12 @@ import 'swiper/css/navigation';
 
 const worksData = [
   { name: "블로그",
+    people:"1인",
+    date: "2023.12 ~ 2023.3",
     url: "https://github.com/aypooo/blog" },
   { name: "쇼핑몰",
+    people:"3인",
+    date: "2022.3 ~ 2022.4",
     url: "https://github.com/aypooo/web-market" },
   // Add more work data objects as needed
 ];
@@ -17,7 +21,7 @@ const worksData = [
 const Works = () => {
   const { ref, inView } = useScrollAnimation();
   return (
-    <div ref={ref} className={`section-content main ${inView ? 'animate' : ''}`}>
+    <div ref={ref} className={`section-content ${inView ? 'animate' : ''}`}>
       <div className="works">
         <h2>Works</h2>
         <Swiper
@@ -34,7 +38,9 @@ const Works = () => {
       >
           {worksData.map((work, index) => (
             <SwiperSlide key={index}>
-              {work.name}
+              <p>프로젝트명: {work.name}</p>
+              <p>개발인원: {work.people}</p>
+              <p>개발기간: {work.date}</p>
               <p onClick={() => window.open(work.url)}>{work.url}</p>
             </SwiperSlide>
           ))}

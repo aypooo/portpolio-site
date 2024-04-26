@@ -5,7 +5,7 @@ const Profile = () => {
 
   const { ref, inView } = useScrollAnimation();
   return (
-    <div ref={ref} className={`section-content main ${inView ? 'animate' : ''}`}>
+    <div ref={ref} className={`section-content ${inView ? 'animate' : ''}`}>
       <div className="profile">
         <h2>Profile</h2>
         <h4>홍륜건</h4> 
